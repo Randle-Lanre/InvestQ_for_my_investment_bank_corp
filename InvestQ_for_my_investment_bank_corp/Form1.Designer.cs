@@ -1,6 +1,6 @@
 ﻿namespace InvestQ_for_my_investment_bank_corp
 {
-    partial class Form1
+    partial class InvestQForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvestQForm));
             this.InvestAmountTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Month12RadioButton = new System.Windows.Forms.RadioButton();
             this.Month6RadioButton = new System.Windows.Forms.RadioButton();
-            this.Month2RadioButton = new System.Windows.Forms.RadioButton();
+            this.Month3RadioButton = new System.Windows.Forms.RadioButton();
             this.Month1RadioButton = new System.Windows.Forms.RadioButton();
             this.DisplayButton = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.UserDetailsGB = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TransactionNumberTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.PhoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.ConfirmButton = new System.Windows.Forms.Button();
+            this.ProceedButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.UserDetailsGB.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,7 +75,7 @@
             // 
             this.groupBox1.Controls.Add(this.Month12RadioButton);
             this.groupBox1.Controls.Add(this.Month6RadioButton);
-            this.groupBox1.Controls.Add(this.Month2RadioButton);
+            this.groupBox1.Controls.Add(this.Month3RadioButton);
             this.groupBox1.Controls.Add(this.Month1RadioButton);
             this.groupBox1.Location = new System.Drawing.Point(27, 219);
             this.groupBox1.Name = "groupBox1";
@@ -104,16 +106,16 @@
             this.Month6RadioButton.Text = "6 Months";
             this.Month6RadioButton.UseVisualStyleBackColor = true;
             // 
-            // Month2RadioButton
+            // Month3RadioButton
             // 
-            this.Month2RadioButton.AutoSize = true;
-            this.Month2RadioButton.Location = new System.Drawing.Point(6, 70);
-            this.Month2RadioButton.Name = "Month2RadioButton";
-            this.Month2RadioButton.Size = new System.Drawing.Size(72, 17);
-            this.Month2RadioButton.TabIndex = 1;
-            this.Month2RadioButton.TabStop = true;
-            this.Month2RadioButton.Text = "3 Months ";
-            this.Month2RadioButton.UseVisualStyleBackColor = true;
+            this.Month3RadioButton.AutoSize = true;
+            this.Month3RadioButton.Location = new System.Drawing.Point(6, 70);
+            this.Month3RadioButton.Name = "Month3RadioButton";
+            this.Month3RadioButton.Size = new System.Drawing.Size(72, 17);
+            this.Month3RadioButton.TabIndex = 1;
+            this.Month3RadioButton.TabStop = true;
+            this.Month3RadioButton.Text = "3 Months ";
+            this.Month3RadioButton.UseVisualStyleBackColor = true;
             // 
             // Month1RadioButton
             // 
@@ -136,25 +138,43 @@
             this.DisplayButton.UseVisualStyleBackColor = true;
             this.DisplayButton.Click += new System.EventHandler(this.DisplayButton_Click);
             // 
-            // groupBox2
+            // UserDetailsGB
             // 
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.EmailTextBox);
-            this.groupBox2.Controls.Add(this.PhoneNumberTextBox);
-            this.groupBox2.Controls.Add(this.NameTextBox);
-            this.groupBox2.Location = new System.Drawing.Point(253, 220);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(287, 197);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "User Details";
+            this.UserDetailsGB.Controls.Add(this.label7);
+            this.UserDetailsGB.Controls.Add(this.TransactionNumberTextBox);
+            this.UserDetailsGB.Controls.Add(this.label3);
+            this.UserDetailsGB.Controls.Add(this.label2);
+            this.UserDetailsGB.Controls.Add(this.label1);
+            this.UserDetailsGB.Controls.Add(this.EmailTextBox);
+            this.UserDetailsGB.Controls.Add(this.PhoneNumberTextBox);
+            this.UserDetailsGB.Controls.Add(this.NameTextBox);
+            this.UserDetailsGB.Location = new System.Drawing.Point(253, 220);
+            this.UserDetailsGB.Name = "UserDetailsGB";
+            this.UserDetailsGB.Size = new System.Drawing.Size(287, 197);
+            this.UserDetailsGB.TabIndex = 3;
+            this.UserDetailsGB.TabStop = false;
+            this.UserDetailsGB.Text = "User Details";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(-3, 38);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Trans Number:";
+            // 
+            // TransactionNumberTextBox
+            // 
+            this.TransactionNumberTextBox.Location = new System.Drawing.Point(77, 35);
+            this.TransactionNumberTextBox.Name = "TransactionNumberTextBox";
+            this.TransactionNumberTextBox.Size = new System.Drawing.Size(180, 20);
+            this.TransactionNumberTextBox.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 102);
+            this.label3.Location = new System.Drawing.Point(13, 151);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 5;
@@ -163,7 +183,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 63);
+            this.label2.Location = new System.Drawing.Point(6, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 4;
@@ -172,7 +192,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 22);
+            this.label1.Location = new System.Drawing.Point(10, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 3;
@@ -180,42 +200,44 @@
             // 
             // EmailTextBox
             // 
-            this.EmailTextBox.Location = new System.Drawing.Point(64, 95);
+            this.EmailTextBox.Location = new System.Drawing.Point(78, 144);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(181, 20);
             this.EmailTextBox.TabIndex = 2;
             // 
             // PhoneNumberTextBox
             // 
-            this.PhoneNumberTextBox.Location = new System.Drawing.Point(64, 56);
+            this.PhoneNumberTextBox.Location = new System.Drawing.Point(78, 107);
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(181, 20);
             this.PhoneNumberTextBox.TabIndex = 1;
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(64, 19);
+            this.NameTextBox.Location = new System.Drawing.Point(78, 69);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(181, 20);
             this.NameTextBox.TabIndex = 0;
             // 
-            // button2
+            // ConfirmButton
             // 
-            this.button2.Location = new System.Drawing.Point(287, 405);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Confirm";
-            this.button2.UseVisualStyleBackColor = true;
+            this.ConfirmButton.Location = new System.Drawing.Point(287, 405);
+            this.ConfirmButton.Name = "ConfirmButton";
+            this.ConfirmButton.Size = new System.Drawing.Size(75, 23);
+            this.ConfirmButton.TabIndex = 6;
+            this.ConfirmButton.Text = "Confirm";
+            this.ConfirmButton.UseVisualStyleBackColor = true;
+            this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
-            // button3
+            // ProceedButton
             // 
-            this.button3.Location = new System.Drawing.Point(49, 405);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Proceed ";
-            this.button3.UseVisualStyleBackColor = true;
+            this.ProceedButton.Location = new System.Drawing.Point(49, 405);
+            this.ProceedButton.Name = "ProceedButton";
+            this.ProceedButton.Size = new System.Drawing.Size(75, 23);
+            this.ProceedButton.TabIndex = 7;
+            this.ProceedButton.Text = "Proceed ";
+            this.ProceedButton.UseVisualStyleBackColor = true;
+            this.ProceedButton.Click += new System.EventHandler(this.ProceedButton_Click);
             // 
             // groupBox3
             // 
@@ -253,6 +275,14 @@
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Summary Details of all investment";
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(21, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(242, 152);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Summary";
             // 
             // button5
             // 
@@ -301,15 +331,7 @@
             this.ExitButton.Text = "Exit ";
             this.ExitButton.UseVisualStyleBackColor = true;
             // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(21, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(242, 152);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Summary";
-            // 
-            // Form1
+            // InvestQForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -321,19 +343,20 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.ProceedButton);
+            this.Controls.Add(this.ConfirmButton);
+            this.Controls.Add(this.UserDetailsGB);
             this.Controls.Add(this.DisplayButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.InvestAmountTextBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "InvestQForm";
             this.Text = "Invest Q";
+            this.Load += new System.EventHandler(this.InvestQForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.UserDetailsGB.ResumeLayout(false);
+            this.UserDetailsGB.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -349,18 +372,18 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton Month12RadioButton;
         private System.Windows.Forms.RadioButton Month6RadioButton;
-        private System.Windows.Forms.RadioButton Month2RadioButton;
+        private System.Windows.Forms.RadioButton Month3RadioButton;
         private System.Windows.Forms.RadioButton Month1RadioButton;
         private System.Windows.Forms.Button DisplayButton;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox UserDetailsGB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox EmailTextBox;
         private System.Windows.Forms.TextBox PhoneNumberTextBox;
         private System.Windows.Forms.TextBox NameTextBox;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button ConfirmButton;
+        private System.Windows.Forms.Button ProceedButton;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox5;
@@ -371,6 +394,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox TransactionNumberTextBox;
     }
 }
 

@@ -16,7 +16,7 @@ namespace InvestQ_for_my_investment_bank_corp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new InvestQForm());
         }
     }
 }
