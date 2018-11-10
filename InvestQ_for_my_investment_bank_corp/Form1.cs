@@ -27,9 +27,10 @@ namespace InvestQ_for_my_investment_bank_corp
         const decimal INTEREST_ON_AMOUNT_ABOVE_100K_12MONTH= 1.2500m;
 
          int TERM_1=1, TERM_3=3,  TERM_6=6, TERM_12 = 12;
+        string value = "";
 
         //decimal principal
-             double Amount; //decimal rate; //decimal term;
+        double Amount; //decimal rate; //decimal term;
         string Message, Heading;
        
 
@@ -50,7 +51,7 @@ namespace InvestQ_for_my_investment_bank_corp
                 
                 CalculateInterest(principal, INTEREST_ON_AMOUNT_UPTO_100K_1MONTH, TERM_1);
                 
-                Month1RadioButton.Text = "1 months  " +Amount.ToString("C2");
+                Month1RadioButton.Text = "1 month  " +Amount.ToString("C2");
 
                 CalculateInterest(principal, INTEREST_0N_AMOUNT_UPTO_100K_3MONTH, TERM_3);
                 Month3RadioButton.Text = "3 months  " +Amount.ToString("C2");
@@ -72,7 +73,7 @@ namespace InvestQ_for_my_investment_bank_corp
 
                 CalculateInterest(principal, INTEREST_ON_AMOUNT_ABOVE_100K_1MONTH, TERM_1);
 
-                Month1RadioButton.Text = "1 months  " + Amount.ToString("C2");
+                Month1RadioButton.Text = "1 month  " + Amount.ToString("C2");
 
                 CalculateInterest(principal, INTEREST_ON_AMOUNT_ABOVE_100K_3MONTH, TERM_3);
                 Month3RadioButton.Text = "3 months  " + Amount.ToString("C2");
@@ -91,7 +92,7 @@ namespace InvestQ_for_my_investment_bank_corp
 
                 CalculateInterest(principal, INTEREST_ON_AMOUNT_ABOVE_100K_1MONTH, TERM_1);
 
-                Month1RadioButton.Text = "1 months  " + Amount.ToString("C2");
+                Month1RadioButton.Text = "1 month  " + Amount.ToString("C2");
 
                 CalculateInterest(principal, INTEREST_ON_AMOUNT_ABOVE_100K_3MONTH, TERM_3);
                 Month3RadioButton.Text = "3 months  " + Amount.ToString("C2");
@@ -120,10 +121,10 @@ namespace InvestQ_for_my_investment_bank_corp
             UserDetailsGB.Visible = true;
             ConfirmButton.Visible = true;
 
-            //string value = "";
-            //bool isChecked = Month1RadioButton.Checked;
-            //if (isChecked)
-            //    value = radioButton1.Text;
+            
+            bool isChecked = Month1RadioButton.Checked;
+            if (isChecked)
+               value = Month1RadioButton.Text;
             //else
             //    value = radioButton2.Text;
 
@@ -138,14 +139,22 @@ namespace InvestQ_for_my_investment_bank_corp
 
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
-            Message = "Details of your transaction below\n";
+            Message = ("Details of your transaction below\n"+
+                "Transaction id: "+ TransactionNumberTextBox.Text+"\n"+ 
+               "Name: " +NameTextBox.Text+"\n"+ 
+               "Phone Number: "+PhoneNumberTextBox.Text+"\n"+
+               "Email: "+EmailTextBox.Text+"\n"+
+               "If the details above are correct and you wish to proceed click OK ");
             Heading = "Confirmation";
             MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+            MessageBoxIcon messageIcon = MessageBoxIcon.Question;
             DialogResult result;
-            result = MessageBox.Show(Message, Heading, buttons);
-            if (result==System.Windows.Forms.DialogResult.OK)
+            result = MessageBox.Show(Message, Heading, buttons,messageIcon );
+            if (result==DialogResult.OK)
             {
                 FileWriter();
+
+                MessageBox.Show("Clients details have been saved ","Details Saved",MessageBoxButtons.OK);
 
             }
 
@@ -154,8 +163,10 @@ namespace InvestQ_for_my_investment_bank_corp
 
         public void FileWriter()//method created to handle file writes
         {
-            using (StreamWriter writer = new StreamWriter("ListOfInvestors.txt"))
-                writer.Write(Name + PhoneNumberTextBox + EmailTextBox);
+            StreamWriter outputFile = new StreamWriter("Investorslist.txt", true);
+            outputFile.WriteLine(TransactionNumberTextBox.Text + "" + NameTextBox.Text +
+                " " + PhoneNumberTextBox.Text + " " + EmailTextBox.Text+ "" + value);
+            outputFile.Close();
 
         }
 
