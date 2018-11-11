@@ -37,6 +37,14 @@ namespace InvestQ_for_my_investment_bank_corp
         string TransCount;
         decimal InvestmentAmount;
 
+        //-----------
+        decimal Month1InterestWithPrincipal, Month3InterestWithPrincipal, Month6InterestWithPrincipal,
+            Month12InterestWithPrincipal;
+        decimal AllInvestments;
+        decimal NumberOfTransactions=0;
+        //-----------
+
+        
         private void DisplayButton_Click(object sender, EventArgs e)
         { 
             InvestAmountTextBox.MaxLength = 9;//sets the maximum lenght of input that can be accepted
@@ -53,16 +61,19 @@ namespace InvestQ_for_my_investment_bank_corp
 
                 
                 CalculateInterest(principal, INTEREST_ON_AMOUNT_UPTO_100K_1MONTH, TERM_1);
-                
+                Month1InterestWithPrincipal =(decimal) Amount;
                 Month1RadioButton.Text = "1 month  " +Amount.ToString("C2");
 
                 CalculateInterest(principal, INTEREST_0N_AMOUNT_UPTO_100K_3MONTH, TERM_3);
+                Month3InterestWithPrincipal = (decimal)Amount;
                 Month3RadioButton.Text = "3 months  " +Amount.ToString("C2");
 
                 CalculateInterest(principal, INTEREST_ON_AMOUNT_UPTO_100K_6MONTH, TERM_6);
+                Month6InterestWithPrincipal =(decimal) Amount;
                 Month6RadioButton.Text = "6 months  "+Amount.ToString("C2");
 
                 CalculateInterest(principal, INTEREST_ON_AMOUNT_UPTO_100K_12MONTH, TERM_12);
+                Month12InterestWithPrincipal = (decimal)Amount;
                 Month12RadioButton.Text = "12 months  "+Amount.ToString("C2");
                 
 
@@ -75,16 +86,19 @@ namespace InvestQ_for_my_investment_bank_corp
                 decimal principal = decimal.Parse(InvestAmountTextBox.Text);
 
                 CalculateInterest(principal, INTEREST_ON_AMOUNT_ABOVE_100K_1MONTH, TERM_1);
-
+                Month12InterestWithPrincipal = (decimal)Amount;
                 Month1RadioButton.Text = "1 month  " + Amount.ToString("C2");
 
                 CalculateInterest(principal, INTEREST_ON_AMOUNT_ABOVE_100K_3MONTH, TERM_3);
+                Month3InterestWithPrincipal=(decimal)Amount;
                 Month3RadioButton.Text = "3 months  " + Amount.ToString("C2");
 
                 CalculateInterest(principal, INTEREST_ON_AMOUNT_ABOVE_100K_6MONTH, TERM_6);
+                Month6InterestWithPrincipal = (decimal)Amount;
                 Month6RadioButton.Text = "6 months  " + Amount.ToString("C2");
 
                 CalculateInterest(principal, INTEREST_ON_AMOUNT_ABOVE_100K_12MONTH, TERM_12);
+                Month12InterestWithPrincipal = (decimal)Amount;
                 Month12RadioButton.Text = "12 months  " + Amount.ToString("C2");
                 
 
@@ -94,16 +108,19 @@ namespace InvestQ_for_my_investment_bank_corp
                 decimal principal = decimal.Parse(InvestAmountTextBox.Text);
 
                 CalculateInterest(principal, INTEREST_ON_AMOUNT_ABOVE_100K_1MONTH, TERM_1);
-
+                Month1InterestWithPrincipal = (decimal)Amount;
                 Month1RadioButton.Text = "1 month  " + Amount.ToString("C2");
 
                 CalculateInterest(principal, INTEREST_ON_AMOUNT_ABOVE_100K_3MONTH, TERM_3);
+                Month3InterestWithPrincipal = (decimal)Amount;
                 Month3RadioButton.Text = "3 months  " + Amount.ToString("C2");
 
                 CalculateInterest(principal, INTEREST_ON_AMOUNT_ABOVE_100K_6MONTH, TERM_6);
+                Month6InterestWithPrincipal = (decimal)(Amount + 5000);
                 Month6RadioButton.Text = "6 months  " +"+ £5000 "+ (Amount+5000).ToString("C2");
 
                 CalculateInterest(principal, INTEREST_ON_AMOUNT_ABOVE_100K_12MONTH, TERM_12);
+                Month12InterestWithPrincipal = (decimal)(Amount + 5000);
                 Month12RadioButton.Text = "12 months  "+"+ £5000 " + (Amount+5000).ToString("C2");
 
             }
@@ -127,19 +144,27 @@ namespace InvestQ_for_my_investment_bank_corp
             {
                 if (Month1RadioButton.Checked)
                 {
-                    value = Month1RadioButton.Text;
+                    AllInvestments += Month1InterestWithPrincipal;
+                    value = (Month1InterestWithPrincipal).ToString("C2");
+                    
                 }
                 else if (Month3RadioButton.Checked)
                 {
-                    value = Month3RadioButton.Text;
+                    AllInvestments += Month3InterestWithPrincipal;
+                    value = (Month3InterestWithPrincipal).ToString("C2");
+                    
                 }
                 else if (Month6RadioButton.Checked)
                 {
-                    value = Month6RadioButton.Text;
+                    AllInvestments += Month6InterestWithPrincipal;
+                    value = (Month6InterestWithPrincipal).ToString("C2");
+                    
                 }
                 else if (Month12RadioButton.Checked)
                 {
-                    value = Month12RadioButton.Text;
+                    AllInvestments += Month12InterestWithPrincipal;
+                    value = (Month12InterestWithPrincipal).ToString("C2");
+                    
                 }
             }
             catch { MessageBox.Show("Please choose a term"); }
@@ -184,7 +209,14 @@ namespace InvestQ_for_my_investment_bank_corp
                 MessageBox.Show("Clients details have been saved ","Details Saved",MessageBoxButtons.OK);
 
                 TransCount += TransactionNumberTextBox.Text + "\n";
-                
+                NumberOfTransactions++;
+                /*
+                string pattern = @"\b£\w*\b";
+                string input = value;
+                Match m = Regex.Match(input, pattern, RegexOptions.IgnoreCase);
+                if (m.Success)
+                    TextOut.Text = m.Value;
+                    //Console.WriteLine("Found '{0}' at position {1}.", m.Value, m.Index); */
 
             }
 
@@ -193,7 +225,9 @@ namespace InvestQ_for_my_investment_bank_corp
 
         private void SummaryButton_Click(object sender, EventArgs e)
         {
-            TextOut.Text = TransCount; 
+            TextOut.Text = TransCount;
+            TextOut2.Text = AllInvestments.ToString("C2");
+            TextOut3.Text = NumberOfTransactions.ToString();
         }
 
         public void FileWriter()//method created to handle file writes

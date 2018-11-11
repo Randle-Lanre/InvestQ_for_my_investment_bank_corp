@@ -57,6 +57,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.TextOut2 = new System.Windows.Forms.Label();
+            this.TextOut3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.UserDetailsGB.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -268,6 +270,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.TextOut3);
+            this.groupBox4.Controls.Add(this.TextOut2);
             this.groupBox4.Controls.Add(this.TextOut);
             this.groupBox4.Location = new System.Drawing.Point(566, 230);
             this.groupBox4.Name = "groupBox4";
@@ -280,7 +284,7 @@
             // 
             this.TextOut.Location = new System.Drawing.Point(21, 20);
             this.TextOut.Name = "TextOut";
-            this.TextOut.Size = new System.Drawing.Size(242, 152);
+            this.TextOut.Size = new System.Drawing.Size(110, 97);
             this.TextOut.TabIndex = 0;
             this.TextOut.Text = "Summary";
             // 
@@ -331,6 +335,21 @@
             this.ExitButton.TabIndex = 14;
             this.ExitButton.Text = "Exit ";
             this.ExitButton.UseVisualStyleBackColor = true;
+            // 
+            // TextOut2
+            // 
+            this.TextOut2.Location = new System.Drawing.Point(147, 23);
+            this.TextOut2.Name = "TextOut2";
+            this.TextOut2.Size = new System.Drawing.Size(130, 94);
+            this.TextOut2.TabIndex = 1;
+            this.TextOut2.Text = "All Investment";
+            // 
+            // TextOut3
+            // 
+            this.TextOut3.Location = new System.Drawing.Point(53, 145);
+            this.TextOut3.Name = "TextOut3";
+            this.TextOut3.Size = new System.Drawing.Size(118, 30);
+            this.TextOut3.TabIndex = 2;
             // 
             // InvestQForm
             // 
@@ -397,6 +416,8 @@
         private System.Windows.Forms.Label TextOut;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TransactionNumberTextBox;
+        private System.Windows.Forms.Label TextOut2;
+        private System.Windows.Forms.Label TextOut3;
     }
 }
 
