@@ -51,8 +51,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.TextOut = new System.Windows.Forms.Label();
+            this.SummaryButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -268,7 +268,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.TextOut);
             this.groupBox4.Location = new System.Drawing.Point(566, 230);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(283, 187);
@@ -276,22 +276,23 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Summary Details of all investment";
             // 
-            // label6
+            // TextOut
             // 
-            this.label6.Location = new System.Drawing.Point(21, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(242, 152);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Summary";
+            this.TextOut.Location = new System.Drawing.Point(21, 20);
+            this.TextOut.Name = "TextOut";
+            this.TextOut.Size = new System.Drawing.Size(242, 152);
+            this.TextOut.TabIndex = 0;
+            this.TextOut.Text = "Summary";
             // 
-            // button5
+            // SummaryButton
             // 
-            this.button5.Location = new System.Drawing.Point(608, 405);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Summary";
-            this.button5.UseVisualStyleBackColor = true;
+            this.SummaryButton.Location = new System.Drawing.Point(608, 405);
+            this.SummaryButton.Name = "SummaryButton";
+            this.SummaryButton.Size = new System.Drawing.Size(75, 23);
+            this.SummaryButton.TabIndex = 10;
+            this.SummaryButton.Text = "Summary";
+            this.SummaryButton.UseVisualStyleBackColor = true;
+            this.SummaryButton.Click += new System.EventHandler(this.SummaryButton_Click);
             // 
             // label4
             // 
@@ -340,7 +341,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.SummaryButton);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.ProceedButton);
@@ -388,12 +389,12 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button SummaryButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button ExitButton;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label TextOut;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TransactionNumberTextBox;
     }

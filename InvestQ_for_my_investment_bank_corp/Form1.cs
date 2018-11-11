@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace InvestQ_for_my_investment_bank_corp
 {
@@ -32,7 +33,9 @@ namespace InvestQ_for_my_investment_bank_corp
         //decimal principal
         double Amount; //decimal rate; //decimal term;
         string Message, Heading;
-       
+
+        string TransCount;
+        decimal InvestmentAmount;
 
         private void DisplayButton_Click(object sender, EventArgs e)
         { 
@@ -120,14 +123,38 @@ namespace InvestQ_for_my_investment_bank_corp
         {
             UserDetailsGB.Visible = true;
             ConfirmButton.Visible = true;
+            try
+            {
+                if (Month1RadioButton.Checked)
+                {
+                    value = Month1RadioButton.Text;
+                }
+                else if (Month3RadioButton.Checked)
+                {
+                    value = Month3RadioButton.Text;
+                }
+                else if (Month6RadioButton.Checked)
+                {
+                    value = Month6RadioButton.Text;
+                }
+                else if (Month12RadioButton.Checked)
+                {
+                    value = Month12RadioButton.Text;
+                }
+            }
+            catch { MessageBox.Show("Please choose a term"); }
 
-            
+
+
+           /* 
             bool isChecked = Month1RadioButton.Checked;
             if (isChecked)
                value = Month1RadioButton.Text;
-            //else
-            //    value = radioButton2.Text;
-
+            
+            else
+               value = Month3RadioButton.Text;
+            else
+                value = Month6RadioButton.Text;  */
         }
 
         private void InvestQForm_Load(object sender, EventArgs e)
@@ -156,9 +183,17 @@ namespace InvestQ_for_my_investment_bank_corp
 
                 MessageBox.Show("Clients details have been saved ","Details Saved",MessageBoxButtons.OK);
 
+                TransCount += TransactionNumberTextBox.Text + "\n";
+                
+
             }
 
             
+        }
+
+        private void SummaryButton_Click(object sender, EventArgs e)
+        {
+            TextOut.Text = TransCount; 
         }
 
         public void FileWriter()//method created to handle file writes
@@ -176,6 +211,12 @@ namespace InvestQ_for_my_investment_bank_corp
             Amount =(double) principal * (Math.Pow(1 + (double)rate/100, (double)term) );
             return Amount;
         }
+
+        public void TransactionDetails()
+        {
+
+        }
+
         public void FindMyTransactions()
         {
 
