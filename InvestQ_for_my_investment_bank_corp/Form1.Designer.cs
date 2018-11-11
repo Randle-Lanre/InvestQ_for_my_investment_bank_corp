@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvestQForm));
             this.InvestAmountTextBox = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.InvestmentTermsGB = new System.Windows.Forms.GroupBox();
             this.Month12RadioButton = new System.Windows.Forms.RadioButton();
             this.Month6RadioButton = new System.Windows.Forms.RadioButton();
             this.Month3RadioButton = new System.Windows.Forms.RadioButton();
@@ -51,15 +51,20 @@
             this.button4 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.TextOut = new System.Windows.Forms.Label();
             this.SummaryButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
-            this.TextOut2 = new System.Windows.Forms.Label();
-            this.TextOut3 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TotalAmountInvestedLabel = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TotalInterestAccruedLabel = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.AvgTermOfInvestementLabel = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.DisplayTransNumberLabel = new System.Windows.Forms.Label();
+            this.InvestmentTermsGB.SuspendLayout();
             this.UserDetailsGB.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -72,19 +77,20 @@
             this.InvestAmountTextBox.Name = "InvestAmountTextBox";
             this.InvestAmountTextBox.Size = new System.Drawing.Size(167, 20);
             this.InvestAmountTextBox.TabIndex = 0;
+            this.InvestAmountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // groupBox1
+            // InvestmentTermsGB
             // 
-            this.groupBox1.Controls.Add(this.Month12RadioButton);
-            this.groupBox1.Controls.Add(this.Month6RadioButton);
-            this.groupBox1.Controls.Add(this.Month3RadioButton);
-            this.groupBox1.Controls.Add(this.Month1RadioButton);
-            this.groupBox1.Location = new System.Drawing.Point(27, 219);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(220, 198);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Investment terms";
+            this.InvestmentTermsGB.Controls.Add(this.Month12RadioButton);
+            this.InvestmentTermsGB.Controls.Add(this.Month6RadioButton);
+            this.InvestmentTermsGB.Controls.Add(this.Month3RadioButton);
+            this.InvestmentTermsGB.Controls.Add(this.Month1RadioButton);
+            this.InvestmentTermsGB.Location = new System.Drawing.Point(27, 219);
+            this.InvestmentTermsGB.Name = "InvestmentTermsGB";
+            this.InvestmentTermsGB.Size = new System.Drawing.Size(220, 198);
+            this.InvestmentTermsGB.TabIndex = 1;
+            this.InvestmentTermsGB.TabStop = false;
+            this.InvestmentTermsGB.Text = "Investment terms";
             // 
             // Month12RadioButton
             // 
@@ -172,6 +178,7 @@
             this.TransactionNumberTextBox.Name = "TransactionNumberTextBox";
             this.TransactionNumberTextBox.Size = new System.Drawing.Size(180, 20);
             this.TransactionNumberTextBox.TabIndex = 6;
+            this.TransactionNumberTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -206,6 +213,7 @@
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(181, 20);
             this.EmailTextBox.TabIndex = 2;
+            this.EmailTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // PhoneNumberTextBox
             // 
@@ -213,6 +221,7 @@
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(181, 20);
             this.PhoneNumberTextBox.TabIndex = 1;
+            this.PhoneNumberTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // NameTextBox
             // 
@@ -220,6 +229,7 @@
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(181, 20);
             this.NameTextBox.TabIndex = 0;
+            this.NameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ConfirmButton
             // 
@@ -270,23 +280,20 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.TextOut3);
-            this.groupBox4.Controls.Add(this.TextOut2);
-            this.groupBox4.Controls.Add(this.TextOut);
-            this.groupBox4.Location = new System.Drawing.Point(566, 230);
+            this.groupBox4.Controls.Add(this.DisplayTransNumberLabel);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.AvgTermOfInvestementLabel);
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Controls.Add(this.TotalInterestAccruedLabel);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.TotalAmountInvestedLabel);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Location = new System.Drawing.Point(566, 180);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(283, 187);
+            this.groupBox4.Size = new System.Drawing.Size(324, 237);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Summary Details of all investment";
-            // 
-            // TextOut
-            // 
-            this.TextOut.Location = new System.Drawing.Point(21, 20);
-            this.TextOut.Name = "TextOut";
-            this.TextOut.Size = new System.Drawing.Size(110, 97);
-            this.TextOut.TabIndex = 0;
-            this.TextOut.Text = "Summary";
             // 
             // SummaryButton
             // 
@@ -335,21 +342,79 @@
             this.ExitButton.TabIndex = 14;
             this.ExitButton.Text = "Exit ";
             this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // TextOut2
+            // label6
             // 
-            this.TextOut2.Location = new System.Drawing.Point(147, 23);
-            this.TextOut2.Name = "TextOut2";
-            this.TextOut2.Size = new System.Drawing.Size(130, 94);
-            this.TextOut2.TabIndex = 1;
-            this.TextOut2.Text = "All Investment";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(26, 116);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(125, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Total Amounts Invested: ";
             // 
-            // TextOut3
+            // TotalAmountInvestedLabel
             // 
-            this.TextOut3.Location = new System.Drawing.Point(53, 145);
-            this.TextOut3.Name = "TextOut3";
-            this.TextOut3.Size = new System.Drawing.Size(118, 30);
-            this.TextOut3.TabIndex = 2;
+            this.TotalAmountInvestedLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.TotalAmountInvestedLabel.Location = new System.Drawing.Point(148, 116);
+            this.TotalAmountInvestedLabel.Name = "TotalAmountInvestedLabel";
+            this.TotalAmountInvestedLabel.Size = new System.Drawing.Size(136, 23);
+            this.TotalAmountInvestedLabel.TabIndex = 1;
+            this.TotalAmountInvestedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(26, 152);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(118, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Total Interest Accrued: ";
+            // 
+            // TotalInterestAccruedLabel
+            // 
+            this.TotalInterestAccruedLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.TotalInterestAccruedLabel.Location = new System.Drawing.Point(148, 152);
+            this.TotalInterestAccruedLabel.Name = "TotalInterestAccruedLabel";
+            this.TotalInterestAccruedLabel.Size = new System.Drawing.Size(136, 23);
+            this.TotalInterestAccruedLabel.TabIndex = 3;
+            this.TotalInterestAccruedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(26, 191);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(147, 13);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Average Term of Investment: ";
+            // 
+            // AvgTermOfInvestementLabel
+            // 
+            this.AvgTermOfInvestementLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.AvgTermOfInvestementLabel.Location = new System.Drawing.Point(178, 191);
+            this.AvgTermOfInvestementLabel.Name = "AvgTermOfInvestementLabel";
+            this.AvgTermOfInvestementLabel.Size = new System.Drawing.Size(89, 23);
+            this.AvgTermOfInvestementLabel.TabIndex = 5;
+            this.AvgTermOfInvestementLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(26, 49);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(108, 13);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "List of Trans Number:";
+            // 
+            // DisplayTransNumberLabel
+            // 
+            this.DisplayTransNumberLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DisplayTransNumberLabel.Location = new System.Drawing.Point(157, 35);
+            this.DisplayTransNumberLabel.Name = "DisplayTransNumberLabel";
+            this.DisplayTransNumberLabel.Size = new System.Drawing.Size(126, 55);
+            this.DisplayTransNumberLabel.TabIndex = 8;
+            this.DisplayTransNumberLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // InvestQForm
             // 
@@ -367,19 +432,20 @@
             this.Controls.Add(this.ConfirmButton);
             this.Controls.Add(this.UserDetailsGB);
             this.Controls.Add(this.DisplayButton);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.InvestmentTermsGB);
             this.Controls.Add(this.InvestAmountTextBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InvestQForm";
             this.Text = "Invest Q";
             this.Load += new System.EventHandler(this.InvestQForm_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.InvestmentTermsGB.ResumeLayout(false);
+            this.InvestmentTermsGB.PerformLayout();
             this.UserDetailsGB.ResumeLayout(false);
             this.UserDetailsGB.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -389,7 +455,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox InvestAmountTextBox;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox InvestmentTermsGB;
         private System.Windows.Forms.RadioButton Month12RadioButton;
         private System.Windows.Forms.RadioButton Month6RadioButton;
         private System.Windows.Forms.RadioButton Month3RadioButton;
@@ -413,11 +479,16 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button ExitButton;
-        private System.Windows.Forms.Label TextOut;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TransactionNumberTextBox;
-        private System.Windows.Forms.Label TextOut2;
-        private System.Windows.Forms.Label TextOut3;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label AvgTermOfInvestementLabel;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label TotalInterestAccruedLabel;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label TotalAmountInvestedLabel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label DisplayTransNumberLabel;
     }
 }
 
