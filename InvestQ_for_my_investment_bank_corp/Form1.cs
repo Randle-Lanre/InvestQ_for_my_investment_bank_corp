@@ -205,7 +205,7 @@ namespace InvestQ_for_my_investment_bank_corp
         private void TransacHistory_Click(object sender, EventArgs e)
         {
             //calls the method find my transaction to search for transactions
-            FindMyTransactions();
+            FindMyTransactions(SearchQueryTextBox.Text);
 
         }
 
@@ -439,24 +439,47 @@ namespace InvestQ_for_my_investment_bank_corp
 
         
 
-        public void FindMyTransactions()
+        public void FindMyTransactions(string SearchQuery)
         {
-            string stt = "55545";
-            StreamReader InputFile;
-            StreamWriter FoundTransac = new StreamWriter("FoundTransactions.txt");
-            InputFile = File.OpenText ("Investorslist.txt");
-            
-            while (InputFile.EndOfStream == false)
+           // string stt = "55545";
+            string line;
+            StreamWriter outputFile = new StreamWriter("FoundTransactions.txt", true);
+            using (StreamReader File=new StreamReader("Investorslist.txt"))
             {
-                string Line= InputFile.ReadLine();
-                if (Line.Contains(stt))
+                while((line=File.ReadLine()) != null)
                 {
-                    break;
+                    if (line.Contains(SearchQuery))
+                    {
+                        outputFile.WriteLine(line); 
+                    }
+                    
                 }
-                FoundTransac.WriteLine(Line);
-
             }
+            outputFile.Close();
 
+
+
+
+
+
+
+            /*StreamReader InputFile;
+           StreamWriter FoundTransac = new StreamWriter("FoundTransactions.txt");
+           InputFile = File.OpenText ("Investorslist.txt");
+
+           while (InputFile.EndOfStream == false)
+           {
+               string Line= InputFile.ReadLine();
+               if (Line.Contains(stt))
+               {
+                   FoundTransac.WriteLine(Line);
+                   break;
+
+               }
+
+
+           }
+            */
         }
     }
 }

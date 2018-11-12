@@ -49,7 +49,7 @@
             this.ProceedButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.TransacHistory = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.SearchQueryTextBox = new System.Windows.Forms.TextBox();
             this.SummaryGB = new System.Windows.Forms.GroupBox();
             this.DisplayTransNumberLabel = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -255,7 +255,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.TransacHistory);
-            this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Controls.Add(this.SearchQueryTextBox);
             this.groupBox3.Location = new System.Drawing.Point(566, 43);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(283, 95);
@@ -273,12 +273,12 @@
             this.TransacHistory.UseVisualStyleBackColor = true;
             this.TransacHistory.Click += new System.EventHandler(this.TransacHistory_Click);
             // 
-            // textBox5
+            // SearchQueryTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(65, 32);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(163, 20);
-            this.textBox5.TabIndex = 0;
+            this.SearchQueryTextBox.Location = new System.Drawing.Point(65, 32);
+            this.SearchQueryTextBox.Name = "SearchQueryTextBox";
+            this.SearchQueryTextBox.Size = new System.Drawing.Size(163, 20);
+            this.SearchQueryTextBox.TabIndex = 0;
             // 
             // SummaryGB
             // 
@@ -485,7 +485,7 @@
         private System.Windows.Forms.Button ProceedButton;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button TransacHistory;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox SearchQueryTextBox;
         private System.Windows.Forms.GroupBox SummaryGB;
         private System.Windows.Forms.Button SummaryButton;
         private System.Windows.Forms.Label label4;
