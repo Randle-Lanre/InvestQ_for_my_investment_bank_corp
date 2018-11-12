@@ -57,10 +57,40 @@ namespace InvestQ_for_my_investment_bank_corp
 
         private void InvestQForm_Load(object sender, EventArgs e)
         {
-            UserDetailsGB.Visible = false;
-            ConfirmButton.Visible = false;
+            UserDetailsGB.Enabled = false;
+            ConfirmButton.Enabled = false;
+            
+            SummaryGB.Visible = false;
+
+            
+            SummaryButton.Visible = false;
+            ClearButton.Enabled = false;
+            ProceedButton.Enabled = false;
+
+            Month1RadioButton.Checked = false;
+            Month3RadioButton.Checked = false;
+            Month6RadioButton.Checked = false;
+            Month12RadioButton.Checked = false;
+
+            Month1RadioButton.Enabled = false;
+            Month3RadioButton.Enabled = false;
+            Month6RadioButton.Enabled = false;
+            Month12RadioButton.Enabled = false;
+
             InvestAmountTextBox.MaxLength = 9;//sets the maximum lenght of input that can be accepted
             TransactionNumberTextBox.MaxLength = 6;
+
+            DisplayButton.Text = "&Display";
+            ProceedButton.Text = "&Proceed";
+            ConfirmButton.Text = "&Confirm";
+            SummaryButton.Text = "&Summary";
+            ClearButton.Text = "&Clear";
+            //Clear button and Transaction history remains
+
+            
+
+
+
         }
 
         private void DisplayButton_Click(object sender, EventArgs e)
@@ -71,10 +101,15 @@ namespace InvestQ_for_my_investment_bank_corp
 
             bool isNum = double.TryParse(Str, out Num);
 
-            if (isNum)
+            if (isNum && InvestAmountTextBox.TextLength==5)
             {
 
-
+                Month1RadioButton.Enabled = true;
+                Month3RadioButton.Enabled = true;
+                Month6RadioButton.Enabled = true;
+                Month12RadioButton.Enabled = true;
+                ProceedButton.Enabled = true;
+                ClearButton.Enabled = true;
 
                 if (InvestAmountTextBox.Text != "" && InvestAmountTextBox.TextLength == 5 && InvestAmountTextBox.TextLength < 6)//check there aren't negatives, set max limit(max and min)
                 {
@@ -167,7 +202,50 @@ namespace InvestQ_for_my_investment_bank_corp
             }
         }
 
-        
+        private void TransacHistory_Click(object sender, EventArgs e)
+        {
+            //calls the method find my transaction to search for transactions
+            FindMyTransactions();
+
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            InvestAmountTextBox.Text = "";
+
+            TransactionNumberTextBox.Text = "";
+            NameTextBox.Text = "";
+            PhoneNumberTextBox.Text = "";
+            EmailTextBox.Text = "";
+
+            DisplayTransNumberLabel.Text = "";
+            TotalAmountInvestedLabel.Text = "";
+            TotalInterestAccruedLabel.Text = "";
+            AvgTermOfInvestementLabel.Text = "";
+
+            UserDetailsGB.Enabled = false;
+            SummaryGB.Visible = false;
+
+            ConfirmButton.Enabled = false;
+            SummaryButton.Visible = false;
+            ClearButton.Enabled = false;
+            ProceedButton.Enabled = false;
+
+            Month1RadioButton.Checked = false;
+            Month3RadioButton.Checked = false;
+            Month6RadioButton.Checked = false;
+            Month12RadioButton.Checked = false;
+
+            Month1RadioButton.Enabled = false;
+            Month3RadioButton.Enabled = false;
+            Month6RadioButton.Enabled = false;
+            Month12RadioButton.Enabled = false;
+
+
+
+
+
+        }
 
         private void ProceedButton_Click(object sender, EventArgs e)
         {
@@ -185,8 +263,8 @@ namespace InvestQ_for_my_investment_bank_corp
             }
             if (CheckThatARadioButtonIsSelected)
             {
-                UserDetailsGB.Visible = true;
-                ConfirmButton.Visible = true;
+                UserDetailsGB.Enabled = true;
+                ConfirmButton.Enabled = true;
 
                 if (Month1RadioButton.Checked)
                 {
@@ -275,6 +353,10 @@ namespace InvestQ_for_my_investment_bank_corp
                                 InvestedAmount += decimal.Parse(InvestAmountTextBox.Text);
                                 NumberOfTransactions++;
 
+                                SummaryGB.Visible = true;
+                                SummaryButton.Visible = true;
+                                
+
 
 
                             }
@@ -355,13 +437,25 @@ namespace InvestQ_for_my_investment_bank_corp
 
         }
 
-        public void TransactionDetails()
-        {
-
-        }
+        
 
         public void FindMyTransactions()
         {
+            string stt = "55545";
+            StreamReader InputFile;
+            StreamWriter FoundTransac = new StreamWriter("FoundTransactions.txt");
+            InputFile = File.OpenText ("Investorslist.txt");
+            
+            while (InputFile.EndOfStream == false)
+            {
+                string Line= InputFile.ReadLine();
+                if (Line.Contains(stt))
+                {
+                    break;
+                }
+                FoundTransac.WriteLine(Line);
+
+            }
 
         }
     }
