@@ -48,10 +48,11 @@
             this.ConfirmButton = new System.Windows.Forms.Button();
             this.ProceedButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.TransacHistory = new System.Windows.Forms.Button();
             this.SearchQueryTextBox = new System.Windows.Forms.TextBox();
             this.SummaryGB = new System.Windows.Forms.GroupBox();
-            this.DisplayTransNumberLabel = new System.Windows.Forms.Label();
+            this.DisplayTransNumber = new System.Windows.Forms.RichTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.AvgTermOfInvestementLabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -65,6 +66,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.InvestmentTermsGB.SuspendLayout();
             this.UserDetailsGB.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -86,9 +89,9 @@
             this.InvestmentTermsGB.Controls.Add(this.Month6RadioButton);
             this.InvestmentTermsGB.Controls.Add(this.Month3RadioButton);
             this.InvestmentTermsGB.Controls.Add(this.Month1RadioButton);
-            this.InvestmentTermsGB.Location = new System.Drawing.Point(27, 219);
+            this.InvestmentTermsGB.Location = new System.Drawing.Point(83, 219);
             this.InvestmentTermsGB.Name = "InvestmentTermsGB";
-            this.InvestmentTermsGB.Size = new System.Drawing.Size(220, 198);
+            this.InvestmentTermsGB.Size = new System.Drawing.Size(277, 198);
             this.InvestmentTermsGB.TabIndex = 1;
             this.InvestmentTermsGB.TabStop = false;
             this.InvestmentTermsGB.Text = "Investment terms";
@@ -157,7 +160,7 @@
             this.UserDetailsGB.Controls.Add(this.EmailTextBox);
             this.UserDetailsGB.Controls.Add(this.PhoneNumberTextBox);
             this.UserDetailsGB.Controls.Add(this.NameTextBox);
-            this.UserDetailsGB.Location = new System.Drawing.Point(253, 220);
+            this.UserDetailsGB.Location = new System.Drawing.Point(468, 220);
             this.UserDetailsGB.Name = "UserDetailsGB";
             this.UserDetailsGB.Size = new System.Drawing.Size(287, 197);
             this.UserDetailsGB.TabIndex = 3;
@@ -234,7 +237,7 @@
             // 
             // ConfirmButton
             // 
-            this.ConfirmButton.Location = new System.Drawing.Point(287, 405);
+            this.ConfirmButton.Location = new System.Drawing.Point(587, 423);
             this.ConfirmButton.Name = "ConfirmButton";
             this.ConfirmButton.Size = new System.Drawing.Size(75, 23);
             this.ConfirmButton.TabIndex = 6;
@@ -244,9 +247,9 @@
             // 
             // ProceedButton
             // 
-            this.ProceedButton.Location = new System.Drawing.Point(49, 405);
+            this.ProceedButton.Location = new System.Drawing.Point(162, 423);
             this.ProceedButton.Name = "ProceedButton";
-            this.ProceedButton.Size = new System.Drawing.Size(75, 23);
+            this.ProceedButton.Size = new System.Drawing.Size(70, 23);
             this.ProceedButton.TabIndex = 7;
             this.ProceedButton.Text = "Proceed ";
             this.ProceedButton.UseVisualStyleBackColor = true;
@@ -254,18 +257,28 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.TransacHistory);
             this.groupBox3.Controls.Add(this.SearchQueryTextBox);
-            this.groupBox3.Location = new System.Drawing.Point(566, 43);
+            this.groupBox3.Location = new System.Drawing.Point(552, 30);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(283, 95);
+            this.groupBox3.Size = new System.Drawing.Size(301, 124);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Search Transaction History ";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(57, 39);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(189, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Enter an Email or Transaction Number:";
+            // 
             // TransacHistory
             // 
-            this.TransacHistory.Location = new System.Drawing.Point(78, 70);
+            this.TransacHistory.Location = new System.Drawing.Point(77, 86);
             this.TransacHistory.Name = "TransacHistory";
             this.TransacHistory.Size = new System.Drawing.Size(135, 23);
             this.TransacHistory.TabIndex = 1;
@@ -275,14 +288,14 @@
             // 
             // SearchQueryTextBox
             // 
-            this.SearchQueryTextBox.Location = new System.Drawing.Point(65, 32);
+            this.SearchQueryTextBox.Location = new System.Drawing.Point(60, 55);
             this.SearchQueryTextBox.Name = "SearchQueryTextBox";
             this.SearchQueryTextBox.Size = new System.Drawing.Size(163, 20);
             this.SearchQueryTextBox.TabIndex = 0;
             // 
             // SummaryGB
             // 
-            this.SummaryGB.Controls.Add(this.DisplayTransNumberLabel);
+            this.SummaryGB.Controls.Add(this.DisplayTransNumber);
             this.SummaryGB.Controls.Add(this.label13);
             this.SummaryGB.Controls.Add(this.AvgTermOfInvestementLabel);
             this.SummaryGB.Controls.Add(this.label11);
@@ -290,21 +303,21 @@
             this.SummaryGB.Controls.Add(this.label9);
             this.SummaryGB.Controls.Add(this.TotalAmountInvestedLabel);
             this.SummaryGB.Controls.Add(this.label6);
-            this.SummaryGB.Location = new System.Drawing.Point(566, 180);
+            this.SummaryGB.Location = new System.Drawing.Point(262, 492);
             this.SummaryGB.Name = "SummaryGB";
             this.SummaryGB.Size = new System.Drawing.Size(324, 237);
             this.SummaryGB.TabIndex = 9;
             this.SummaryGB.TabStop = false;
             this.SummaryGB.Text = "Summary Details of all investment";
             // 
-            // DisplayTransNumberLabel
+            // DisplayTransNumber
             // 
-            this.DisplayTransNumberLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.DisplayTransNumberLabel.Location = new System.Drawing.Point(157, 35);
-            this.DisplayTransNumberLabel.Name = "DisplayTransNumberLabel";
-            this.DisplayTransNumberLabel.Size = new System.Drawing.Size(126, 55);
-            this.DisplayTransNumberLabel.TabIndex = 8;
-            this.DisplayTransNumberLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DisplayTransNumber.Location = new System.Drawing.Point(154, 19);
+            this.DisplayTransNumber.Name = "DisplayTransNumber";
+            this.DisplayTransNumber.ReadOnly = true;
+            this.DisplayTransNumber.Size = new System.Drawing.Size(164, 77);
+            this.DisplayTransNumber.TabIndex = 8;
+            this.DisplayTransNumber.Text = "";
             // 
             // label13
             // 
@@ -371,9 +384,9 @@
             // 
             // SummaryButton
             // 
-            this.SummaryButton.Location = new System.Drawing.Point(608, 405);
+            this.SummaryButton.Location = new System.Drawing.Point(612, 527);
             this.SummaryButton.Name = "SummaryButton";
-            this.SummaryButton.Size = new System.Drawing.Size(75, 23);
+            this.SummaryButton.Size = new System.Drawing.Size(99, 40);
             this.SummaryButton.TabIndex = 10;
             this.SummaryButton.Text = "Summary";
             this.SummaryButton.UseVisualStyleBackColor = true;
@@ -410,9 +423,9 @@
             // 
             // ExitButton
             // 
-            this.ExitButton.Location = new System.Drawing.Point(344, 516);
+            this.ExitButton.Location = new System.Drawing.Point(612, 683);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(139, 30);
+            this.ExitButton.Size = new System.Drawing.Size(99, 32);
             this.ExitButton.TabIndex = 14;
             this.ExitButton.Text = "Exit ";
             this.ExitButton.UseVisualStyleBackColor = true;
@@ -420,19 +433,38 @@
             // 
             // ClearButton
             // 
-            this.ClearButton.Location = new System.Drawing.Point(344, 461);
+            this.ClearButton.Location = new System.Drawing.Point(612, 608);
             this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(140, 36);
+            this.ClearButton.Size = new System.Drawing.Size(99, 39);
             this.ClearButton.TabIndex = 15;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
+            // label10
+            // 
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label10.Location = new System.Drawing.Point(34, 503);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(167, 64);
+            this.label10.TabIndex = 16;
+            // 
+            // label12
+            // 
+            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label12.Location = new System.Drawing.Point(34, 575);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(184, 35);
+            this.label12.TabIndex = 17;
+            // 
             // InvestQForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 659);
+            this.ClientSize = new System.Drawing.Size(902, 741);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.ProceedButton);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.label5);
@@ -441,7 +473,6 @@
             this.Controls.Add(this.SummaryButton);
             this.Controls.Add(this.SummaryGB);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.ProceedButton);
             this.Controls.Add(this.ConfirmButton);
             this.Controls.Add(this.UserDetailsGB);
             this.Controls.Add(this.DisplayButton);
@@ -501,8 +532,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label TotalAmountInvestedLabel;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label DisplayTransNumberLabel;
         private System.Windows.Forms.Button ClearButton;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.RichTextBox DisplayTransNumber;
     }
 }
 
